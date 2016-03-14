@@ -1,0 +1,126 @@
+﻿<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 main">
+            <h2 class="sub-header">Servers
+            <div class="pull-right">
+                <a href="#/create" class="btn btn-success"><i class="fa fa-plus"></i> Add new</a>
+            </div>
+            </h2>
+           
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Ip</th>
+                            <th>CPU</th>
+                            <th>RAM</th>
+                            <th>HDD</th>
+                            <th>Last CPU status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="server in servers">
+                            <td>
+                                {{server.name}}
+                            </td>
+                            <td>
+                                {{server.status.state}}
+                            </td>
+                            <td>
+                                <span ng-repeat="ip in server.ips">
+                                    {{ip.ip}}
+                                </span>
+                            </td>
+                            <td>
+                                {{server.hardware.vcore}}
+                            </td>
+                            <td>
+                                {{server.hardware.ram}}
+                            </td>
+                            <td ng-repeat="hdd in server.hardware.hdds|filter:{is_main:true}:true">
+                                {{hdd.size}}
+                            </td>
+                            <td>
+                                {{server.lastCPUStatus}}
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="deleteServer(server.id)">delete</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="sub-header">Load Balancers
+                <div class="pull-right">
+                    <a href="#/create" class="btn btn-success"><i class="fa fa-plus"></i> Add new</a>
+                </div>
+            </h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Public Ip</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="lb in loadBalancers">
+                            <td>
+                                {{lb.name}}
+                            </td>
+                            <td>
+                                {{lb.state}}
+                            </td>
+                            <td>
+                                {{lb.ip}}
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="sub-header">Firewall Policies
+                <div class="pull-right">
+                    <a href="#/create" class="btn btn-success"><i class="fa fa-plus"></i> Add new</a>
+                </div>
+            </h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Port</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="policy in firewallPolicies">
+                            <td>
+                                {{policy.name}}
+                            </td>
+                            <td>
+                                {{policy.state}}
+                            </td>
+                            <td>
+                                <span ng-repeat="(key, protocol) in policy.protocols">
+                                    {{key}} : {{protocol}}
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

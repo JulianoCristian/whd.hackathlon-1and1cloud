@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>_1and1Cloud</title>
+    <!-- WinJS references -->
+    <script src="WinJS/js/base.js"></script>
+    <script src="WinJS/js/ui.js"></script>
+
+    <!-- _1and1Cloud references -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/css/css/font-awesome.css" rel="stylesheet" />
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.js"></script>
+  
+    <script src="/js/angular-route.js"></script>
+    <script src="/js/default.js"></script>
+    <script src="/js/controllers/api-controller.js"></script>
+    <script src="/js/controllers/list-controller.js"></script>
+    <script src="/js/controllers/create-controller.js"></script>
+</head>
+<body ng-app="whd">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">1&1 Cloud Management Console</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/list"><i class="fa fa-refresh"></i> List</a></li>
+                    <li><a href="#/api"><i class="fa fa-cog"></i> API</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div ng-view style="margin-top:60px;"></div>
+</body>
+</html>

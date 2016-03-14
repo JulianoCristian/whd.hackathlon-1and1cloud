@@ -1,0 +1,29 @@
+﻿<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 main">
+
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Server name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Server name" ng-model="server.name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Server Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Server description" ng-model="server.description">
+                </div>
+                <div class="form-group">
+                    <label>Hardware</label>
+                    <input type="text" class="form-control" id="cpu" placeholder="cpu" ng-model="server.hardware.vcore">
+                    <input type="text" class="form-control" id="ram" placeholder="ram" ng-model="server.hardware.ram">
+                    <div ng-repeat="hdd in server.hardware.hdds">
+                        <input type="text" class="form-control" id="hdd" placeholder="hdd" ng-model="hdd.size">
+
+                    </div>
+                    <button id="add-hdd" ng-click="addHdd()">Add HDD</button>
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="createServer()">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
