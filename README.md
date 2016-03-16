@@ -1,5 +1,5 @@
 # 1&1 Cloud API Management Console
-We ([Daniel Dimitrov](https://twitter.com/compojoom) & [Alejandro Martinez](https://www.linkedin.com/in/alejandromartcu) have 
+We ([Daniel Dimitrov](https://twitter.com/compojoom) & [Alejandro Martinez](https://www.linkedin.com/in/alejandromartcu)) have 
 created this Universal Windows App (UWP) at the WHD.hackathlon 2016. 
 
 The App is working with the [1&1 Cloud API v1](https://cloudpanel-api.1and1.com/documentation/v1/)
